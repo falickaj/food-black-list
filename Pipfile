@@ -16,6 +16,7 @@ flask-swagger-ui = "*"
 flask-cors = "*"
 waitress = "*"
 pytest = "*"
+pathlib = "*"
 
 [dev-packages]
 

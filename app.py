@@ -6,11 +6,11 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 import os
 import json
+from pathlib import Path
 from flask_cors import CORS,cross_origin
+## APP
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
-
-
 cors = CORS(app)
 
 ENV = 'production'
@@ -25,12 +25,18 @@ else:
 	app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir,'db.sqlite')
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
 # Init DB and MA
 db =SQLAlchemy(app)
 ma = Marshmallow(app)
 
-
+@app.before_first_request
+def check_db_data():
+	filedb = "db.sqlite"
+	path = Path(filedb)
+	if path.is_file():
+		pass
+	else:
+		db.create_all()
 # Product Class/Model	
 class Product(db.Model):
 	id = db.Column(db.Integer,primary_key=True)
