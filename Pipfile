@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+psycopg2 = "*"
+psycopg2-binary = "*"
+flask-sqlalchemy = "*"
+gunicorn = "*"
+flask-marshmallow = "*"
+marshmallow = "*"
+marshmallow-sqlalchemy = "*"
+flask-swagger-ui = "*"
+flask-cors = "*"
+waitress = "*"
+pytest = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
