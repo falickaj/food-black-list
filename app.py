@@ -56,6 +56,12 @@ class ProductSchema(ma.Schema):
 product_schema = ProductSchema()
 products_schema = ProductSchema(many=True)
 
+# / Just to remove flask white page
+@app.route('/')
+def hello():
+	return "Hello there"
+
+
 # Create Product
 @app.route('/product',methods=['POST'])
 def add_product():
