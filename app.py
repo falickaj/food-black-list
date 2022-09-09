@@ -67,7 +67,8 @@ def hello():
 def add_product():
 	name = request.json['name']
 	description = request.json['description']
-
+	name = name.lstrip()
+	description = description.lstrip()
 	new_product = Product(name,description)
 	db.session.add(new_product)
 	db.session.commit()
