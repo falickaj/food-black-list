@@ -4,19 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-flask = "*"
-psycopg2 = "*"
-psycopg2-binary = "*"
-flask-sqlalchemy = "*"
+fastapi = "*"
+redis = "*"
+redis-om = "*"
+uvicorn = "*"
 gunicorn = "*"
-flask-marshmallow = "*"
-marshmallow = "*"
-marshmallow-sqlalchemy = "*"
-flask-swagger-ui = "*"
-flask-cors = "*"
-waitress = "*"
-pytest = "*"
-pathlib = "*"
 
 [dev-packages]
 
